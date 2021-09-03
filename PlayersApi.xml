@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PlayersApi</name>
+    </assembly>
+    <members>
+        <member name="M:PlayersApi.PlayersController.GetPlayers">
+            <summary>
+            Get all players
+            </summary>
+            <remarks>
+            Sample request:
+            
+                Get api/Players/
+            </remarks>
+            <returns>Returns players</returns>
+            <response code="200">Ok</response>     
+        </member>
+        <member name="M:PlayersApi.PlayersController.GetPlayer(System.Int64)">
+            <summary>
+            Get Player information
+            </summary>
+            <remarks>
+            Sample request:
+            
+                Get api/Players/1
+            </remarks>
+            <param name="id"></param>
+            <returns>Returns player info</returns>
+            <response code="200">Ok</response>        
+            <response code="404">Player is not found</response>  
+        </member>
+        <member name="M:PlayersApi.PlayersController.PutPlayer(System.Int64,PlayersApi.Models.Player)">
+            <summary>
+            Update player information.
+            </summary>
+            <remarks>
+            Sample request:
+            
+                PUT api/Players/2
+                {        
+                    "id": 2,
+                    "name": "Frenkie de jong",
+                    "height": 180,
+                    "birthday": "1997-05-12T00:00:00",
+                    "avatarURL": "https://www.frenkiedejong.com/wp-content/uploads/2019/06/FD21_nieuwesite-1024x1024.jpg",
+                    "teamId": null
+                }
+            </remarks>
+            <param name="id"></param>
+            <response code="200">Player is updated</response>
+            <response code="400">Param id is different from the body</response>     
+            <response code="404">Player is not found</response>     
+        </member>
+        <member name="M:PlayersApi.PlayersController.PostPlayer(PlayersApi.Models.Player)">
+            <summary>
+            Save an new player
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST api/Players/
+                {
+                {
+              "name": "Frenkie de jong",
+              "height": 180,
+              "birthday": "1997-05-12T00:00:00",
+              "avatarURL": "https://www.frenkiedejong.com/wp-content/uploads/2019/06/FD21_nieuwesite-1024x1024.jpg",
+              "teamId": null
+                }
+            </remarks>        
+            <returns>Returns newly created player</returns>
+            <response code="200">Ok</response>      
+            <response code="404">Player is not found</response>      
+        </member>
+        <member name="M:PlayersApi.PlayersController.DeletePlayer(System.Int64)">
+            <summary>
+            Delete a player
+            </summary>
+            <remarks>
+            Sample request:
+            
+                DELETE api/Players/2
+               
+            </remarks>    
+            <param name="id"></param>
+            <response code="200">Player is removed</response>      
+            <response code="404">If player is not found</response>    
+        </member>
+        <member name="M:PlayersApi.PlayersController.AddPlayerToTeam(System.Int64,System.Int64)">
+            <summary>
+            Connect a player to a team
+            </summary>
+            <remarks>
+            Sample request:
+            
+                PUT api/Players/2/Team/1
+               
+            </remarks>    
+            <param name="id"></param>
+            /// <param name="teamid"></param>
+            <response code="200">Player is connect to a team</response>      
+            <response code="404">If player is not found or team is not found</response>  
+            
+        </member>
+        <member name="M:PlayersApi.TeamsController.GetTeams">
+            <summary>
+            Get all teams
+            </summary>
+            <remarks>
+            Sample request:
+            
+                Get api/Teams/
+            </remarks>
+            <returns>Returns teams</returns>
+            <response code="200">Ok</response>        
+        </member>
+        <member name="M:PlayersApi.TeamsController.GetTeam(System.Int64)">
+            <summary>
+            Get Team information
+            </summary>
+            <remarks>
+            Sample request:
+            
+                Get api/Teams/1
+            </remarks>
+            <param name="id"></param>
+            <returns>Returns team info</returns>
+            <response code="200">Ok</response>        
+            <response code="404">Team is not found</response>     
+        </member>
+        <member name="M:PlayersApi.TeamsController.PutTeam(System.Int64,PlayersApi.Models.Team)">
+            <summary>
+            Update team information.
+            </summary>
+            <remarks>
+            Sample request:
+            
+                PUT api/Teams/5
+                {        
+                  "id": 5,
+                   "name": "Liverpol",        
+                   "avatarURL": "https://commons.wikimedia.org/wiki/File:600px_Rosso_con_grifone_Bianco_scudato_e_fiamme.png"
+                }
+            </remarks>
+            <param name="id"></param>
+            <response code="200">If team is updated</response>
+            <response code="400">If the param id is different from the body</response>     
+            <response code="404">If team is not found</response>     
+        </member>
+        <member name="M:PlayersApi.TeamsController.PostTeam(PlayersApi.Models.Team)">
+            <summary>
+            Save an new team
+            </summary>
+            <remarks>
+            Sample request:
+            
+                Post api/Teams/
+                {
+                 "name" : "Arsenal",
+                 "avatarURL": "https://commons.wikimedia.org/wiki/File:600px_Rosso_con_grifone_Bianco_scudato_e_fiamme.png"
+                }
+            </remarks>        
+            <returns>Returns newly created team</returns>
+            <response code="200">Ok</response>      
+        </member>
+        <member name="M:PlayersApi.TeamsController.DeleteTeam(System.Int64)">
+            <summary>
+            Delete a team
+            </summary>
+            <remarks>
+            Sample request:
+            
+                DELETE api/Teams/6
+               
+            </remarks>    
+            <param name="id"></param>
+            <response code="200">Team is removed</response>      
+            <response code="404">If team is not found</response>    
+        </member>
+    </members>
+</doc>
